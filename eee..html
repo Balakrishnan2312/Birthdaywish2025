@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title> Paithiyathuku Birthday 💐</title>
+  <style>
+    body {
+      margin: 0;
+      background-image: url("WhatsApp Image 2025-07-31 at 18.41.28_3e1e4b51.jpg");
+      background-repeat: no-repeat;
+      background-size: 414px to 896px ;
+      background-position-x:  center;
+      font-family: 'Segoe UI', cursive;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+      padding: 10px;
+    }
+
+    h1 {
+      font-size: 2.3em;
+      color: #ffffff;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      margin-top: 10px;
+      display: none;
+      animation: bounce 1s infinite;
+    }
+
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-10px); }
+    }
+
+    .cake, .booklet {
+      display: none;
+      opacity: 0;
+      transform: scale(0.9);
+      transition: opacity 0.6s ease, transform 0.6s ease;
+    }
+
+    .cake.show, .booklet.show {
+      display: block;
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .cake {
+      width: 180px;
+      margin: 20px;
+      position: relative;
+    }
+
+    .cake img {
+      width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .candle {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 10px;
+      height: 30px;
+      background: #ffcc00;
+      border-radius: 3px;
+    }
+
+    .flame {
+      width: 10px;
+      height: 10px;
+      background: orange;
+      border-radius: 50%;
+      position: absolute;
+      top: -8px;
+      left: 0;
+      animation: flicker 0.4s infinite alternate;
+    }
+
+    @keyframes flicker {
+      from { transform: scale(1); opacity: 1; }
+      to { transform: scale(1.2); opacity: 0.8; }
+    }
+
+    button {
+      padding: 12px 20px;
+      font-size: 1.1em;
+      background-color: transparent;
+      color: rgb(0, 238, 255);
+      border: none;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      cursor: pointer;
+      margin-top: 30px;
+      transition: transform 0.2s ease;
+    }
+
+    button:hover {
+      transform: scale(1.05);
+    }
+
+    .booklet {
+      width: 100%;
+      max-width: 340px;
+      height: 440px;
+      perspective: 1000px;
+      margin-top: 30px;
+     
+    }
+
+    .card {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 1s;
+      cursor: pointer;
+    }
+
+    .card.open {
+      transform: rotateY(180deg);
+    }
+
+    .front, .back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      border-radius: 20px;
+      box-shadow:  0 4px 10px rgba(0,0,0,0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      padding: 0px;
+      font-size: 1.2em;
+    }
+
+    .front {
+      
+      background: #fff0f5;
+      color: #000000;
+    }
+
+    .back {
+      background: #ffe4e1;
+      color: #000000;
+      transform: rotateY(180deg);
+      
+    }
+
+    .back img {
+      width: 90px;
+      height: 90px;
+      border-radius: 50%;
+      object-fit: cover;
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+      margin-bottom: 10px;
+    }
+
+    .name {
+      font-size: 1.2em;
+      font-weight: bold;
+      margin-bottom: 5px;
+    }
+
+    .message {
+      font-size: 1em;
+      font-display: normal;
+      color: #7b2c5b;
+      text-align: center;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-display: normal;
+        font-size: 1.8em;
+      }
+
+      button {
+        font-size: 1em;
+        padding: 10px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h1 id="birthdayMessage"> HAPPY BIRTHDAY LUSU 💎🤍</h1>
+
+  <div class="cake" id="cake">
+    <div class="candle">
+      <div class="flame"></div>
+    </div>
+    <img src="WhatsApp Image 2025-07-27 at 13.26.44_571c7f68.jpg" alt="Birthday Cake"/>
+  
+  </div>
+ 
+  <button id="revealBtn" onclick="revealSurprise()"> Itha aluthunga MADAM 💐</button>
+
+  <div class="booklet" id="booklet">
+    <div class="card" onclick="this.classList.toggle('open')">
+      
+      <div class="front"> 
+        
+        Ithaiyum Aluthunga MADAM 🤍
+      </div>
+      
+      <div class="back">
+        <img src="IMG_20250727_143206.jpg" alt="Friend Photo">
+        <div class="name">LUSU🤍</div>
+        <div class="message"><h4> Yethukum feel pannatha eppovum nan un kuda irupan❤‍🩹 
+        <br>jollya iru Nalla padi ❤‍🩹
+        <br>I wanna see you successful in carrier 🩺👩🏻‍⚕
+        <br> apram!! nan enna soldrathuu.. 😁
+        <br>HAPPY BIRTHDAY MADAM 🤍
+        <br> Miss you Panni 🐖
+        <br>🫵🏻🥹💎🤍</h4>
+        </div>
+      </div>
+    </div>
+       <br><audio id="myAudio" src="song.mp3" controls></audio>
+  </div>
+
+
+  <script>
+    function revealSurprise() {
+      document.getElementById('birthdayMessage').style.display = 'block';
+      document.getElementById('cake').classList.add('show');
+      document.getElementById('booklet').classList.add('show');
+      document.getElementById('revealBtn').style.display = 'none';
+      document.getElementById('birthdaySong').play();
+    }
+  </script>
+
+</body>
+</html>
